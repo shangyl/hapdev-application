@@ -1,0 +1,8 @@
+[registries]
+crate-isolovr = { index = "http://git.isolovr.com/crate/crate-index.git" }
+
+[registry]
+default = "crate-isolovr"
+
+[alias]
+xtask = "run --manifest-path ./xtask/Cargo.toml --"

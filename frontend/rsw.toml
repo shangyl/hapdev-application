@@ -1,0 +1,24 @@
+name = "rsw"
+version = "0.1.0"
+
+#! time interval for file changes to trigger wasm-pack build, default `50` milliseconds
+interval = 50
+
+#! link
+#! npm link @see https://docs.npmjs.com/cli/v8/commands/npm-link
+#! yarn link @see https://classic.yarnpkg.com/en/docs/cli/link
+#! pnpm link @see https://pnpm.io/cli/link
+#! The link command will only be executed if `[[crates]] link = true`
+#! cli: `npm` | `yarn` | `pnpm`, default is `npm`
+cli = "yarn"
+
+
+#! ################# NPM Package #################
+
+#! -------- package: rsw-hello --------
+[[crates]]
+root = "."
+#! npm package name
+name = "frontend-wasm"
+#! run `npm link`: `true` | `false`, default is `false`
+link = true

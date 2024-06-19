@@ -1,0 +1,32 @@
+[workspace]
+members = ["server", "xtask"]
+
+resolver = "2"
+
+exclude = ["frontend"]
+
+
+[patch.crate-isolovr]
+# general-services = { path = "../general-services" }
+query-params = { path = "../query_params" }
+
+excel-orm = { path = "../hapdev-support/framework/excel-orm" }
+hapdev-app = { path = "../hapdev-support/common/application" }
+hapdev-config = { path = "../hapdev-support/common/config" }
+sql-orm = { path = "../hapdev-support/framework/sql-orm" }
+sql-orm-derive = { path = "../hapdev-support/framework/sql-orm/sql-orm-derive" }
+sql-orm-types = { path = "../hapdev-support/framework/sql-orm/sql-orm-types" }
+web-framework = { path = "../hapdev-support/framework/web-framework" }
+
+
+config-derive = { path = "../hapdev-support/module/config/config-derive" }
+crate-config = { path = "../hapdev-support/module/config" }
+crate-kms = { path = "../hapdev-support/module/kms" }
+crate-resource = { path = "../hapdev-support/module/resource" }
+crate-user = { path = "../hapdev-support/module/user/user" }
+crate-weixin = { path = "../hapdev-support/module/weixin" }
+user-model = { path = "../hapdev-support/module/user/user-model" }
+
+fusion-codegen = { path = "../fusion-builder/fusion-codegen" }
+model-core = { path = "../fusion-builder/core/model-core" }
+builder-core = { path = "../fusion-builder/core/builder-core" }

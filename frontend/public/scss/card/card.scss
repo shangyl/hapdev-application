@@ -1,0 +1,17 @@
+.card-no-border {
+  @extend .card;
+  border: none;
+}
+
+.card-header-no-border {
+  @extend .card-header;
+  background-color: transparent;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}

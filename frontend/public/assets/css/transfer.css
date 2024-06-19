@@ -1,0 +1,28 @@
+.form-checkbox{position: relative; display: inline-block; vertical-align: middle; height: 30px; line-height: 30px; margin-right: 10px; padding-right: 30px; background-color: #fff; cursor: pointer; font-size: 0;  -webkit-transition: .1s linear; transition: .1s linear; box-sizing: border-box;}
+.form-checkbox:hover{}
+.form-checkbox *{display: inline-block; vertical-align: middle;}
+.form-checkbox span{padding: 0 10px; height: 100%; font-size: 14px; border-radius: 2px 0 0 2px; background-color: #d2d2d2; color: #fff; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.form-checkbox:hover span{background-color: #c2c2c2;}
+.form-checkbox i{position: absolute; right: 0; top: 0; width: 30px; height: 28px; border: 1px solid #d2d2d2; border-left: none; border-radius: 0 2px 2px 0; color: #fff; font-size: 20px; text-align: center;}
+.form-checkbox:hover i{border-color: #c2c2c2; color: #c2c2c2;}
+
+
+.form-checkbox {width: 100%;margin: 0 !important;}
+.transfer-box,
+.transfer-header,
+.transfer-search{border-width: 0; border-style: solid; border-color: #eee}
+.transfer-box{position: relative; display: inline-block; vertical-align: middle; border-width: 1px; width: 200px; height: 360px; border-radius: 2px; background-color:#fff;}
+.transfer-box .layui-form-checkbox{width: 100%; margin: 0 !important;}
+.transfer-header{height: 38px; line-height: 38px; padding: 0 10px; border-bottom-width: 1px;}
+.transfer-search{position:relative; padding: 10px; border-bottom-width: 1px;}
+.transfer-search .layui-input{height: 32px; padding-left: 30px; font-size: 12px;}
+.transfer-search .layui-icon-search{position: absolute; left: 20px; top: 50%; margin-top: -8px; color: #666;}
+.transfer-active{margin: 0 15px; display: inline-block; vertical-align: middle;}
+.transfer-active .layui-btn{display: block; margin: 0; padding: 0 15px; background-color: #5FB878; border-color: #5FB878; color: #fff;}
+.transfer-active .layui-btn-disabled{background-color: #FBFBFB; border-color: #eee; color: #d2d2d2;}
+.transfer-active .layui-btn:first-child{margin-bottom: 15px;}
+.transfer-active .layui-btn .layui-icon{margin: 0; font-size: 14px !important;}
+.transfer-data{padding: 5px 0; overflow: auto;}
+.transfer-data li{height: 32px; line-height: 32px; padding: 0 10px;}
+.transfer-data li:hover{background-color: #F6F6F6; transition: .5s all;}
+.transfer-data .layui-none{padding: 15px 10px; text-align: center; color: #999;}

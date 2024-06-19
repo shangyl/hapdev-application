@@ -1,0 +1,88 @@
+[package]
+name = "frontend-wasm"
+version = "0.1.0"
+
+authors = ["shangyl <shangyl@live.com>"]
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["console_error_panic_hook", "wasm"]
+
+wasm = ["wee_alloc", "console_error_panic_hook"]
+
+[dependencies]
+cfg-if = { version = "^1.0" }
+
+log = { version = " ^0.4" }
+
+wasm-bindgen = { version = "^0.2" }
+wasm-logger = { version = "^0.2" }
+
+console_error_panic_hook = { version = "^0.1", optional = true }
+
+wee_alloc = { version = "^0.4", optional = true }
+
+admin-webui = { version = "^0.2", features = [
+    "websocket",
+    "fullcalendar",
+], registry = "crate-isolovr" }
+webui = { version = "^0.2", features = [
+    "dropzone",
+    "tinymce",
+    "fullcalendar",
+    "flatpickr",
+    "codemirror",
+], registry = "crate-isolovr" }
+
+web-app-package = { version = "^0.1", registry = "crate-isolovr" }
+web-config = { version = "^0.1", registry = "crate-isolovr" }
+web-kms = { version = "^0.1", registry = "crate-isolovr" }
+web-resource = { version = "^0.1", registry = "crate-isolovr" }
+web-user = { version = "^0.1", registry = "crate-isolovr" }
+web-weixin = { version = "^0.1", registry = "crate-isolovr" }
+
+yew = { version = "^0.21" }
+yew-router = { version = "^0.18" }
+
+validator = { version = "^0.18", features = ["derive"] }
+
+serde = { version = "^1.0", features = ["derive"] }
+
+gloo-net = { version = "^0.5" }
+
+url = { version = "^2.2" }
+
+chrono = { version = "^0.4", features = ["serde", "wasmbind"] }
+
+strum = { version = "^0.26", features = ["derive"] }
+
+# plotters = {version = "^0.3.5", path = "/home/shangyl/rust/plotters/plotters"}
+# plotters-canvas = {version = "^0.3", path = "/home/shangyl/rust/plotters-canvas"}
+serde-wasm-bindgen = { version = "0.6" }
+serde_json = { version = "^1.0" }
+wasm-bindgen-futures = { version = "^0.4" }
+
+js-sys = { version = "^0.3" }
+web-sys = { version = "0.3" }
+
+[dev-dependencies]
+wasm-bindgen-test = "^0.3"
+
+
+[patch.crate-isolovr]
+# query-params = { path = "../../../query_params" }
+
+admin-webui = { path = "../../../hapdev-web/admin-webui" }
+webui = { path = "../../../hapdev-web/webui" }
+webui-derive = { path = "../../../hapdev-web/webui-derive" }
+webui-support = { path = "../../../hapdev-web/webui-support" }
+
+web-app-package = { path = "../../../hapdev-web/module/app-package" }
+web-config = { path = "../../../hapdev-web/module/config" }
+web-resource = { path = "../../../hapdev-web/module/resource" }
+web-user = { path = "../../../hapdev-web/module/user" }
+web-kms = { path = "../../../hapdev-web/module/kms" }
+web-weixin = { path = "../../../hapdev-web/module/weixin" }

@@ -1,0 +1,18 @@
+.transfer {
+    .card-body {
+        display: flex;
+        overflow-y: scroll;
+    }
+    .filter {
+        margin: 0rem;
+    }
+    .left-container {
+        height: 30rem;
+    }
+    .operation {
+        margin-top: 10rem;
+    }
+    .right-container {
+        height: 30rem;
+    }
+}

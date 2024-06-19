@@ -1,0 +1,25 @@
+div.tox-fullscreen {
+  z-index: 100000 !important;
+  border-radius: 0px !important;
+  margin-left: 200px;
+  margin-bottom: 30px;
+}
+
+.tox-fullscreen .tox.tox-tinymce-aux {
+  z-index: 100001 !important;
+}
+
+div.fusion-tinymce {
+  z-index: 100000 !important;
+  position: absolute;
+  border: 2px solid #eee;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #fff;
+}
+
+.tox .tox-dialog {
+  z-index: 100001 !important;
+}

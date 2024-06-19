@@ -1,0 +1,14 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+*.lock
+
+package-lock.json
+
+# rust
+target/
+Cargo.lock
+pkg/
+/.rsw
