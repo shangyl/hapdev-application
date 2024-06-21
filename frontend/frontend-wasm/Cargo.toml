@@ -70,19 +70,3 @@ web-sys = { version = "0.3" }
 
 [dev-dependencies]
 wasm-bindgen-test = "^0.3"
-
-
-[patch.crate-isolovr]
-# query-params = { path = "../../../query_params" }
-
-admin-webui = { path = "../../../hapdev-web/admin-webui" }
-webui = { path = "../../../hapdev-web/webui" }
-webui-derive = { path = "../../../hapdev-web/webui-derive" }
-webui-support = { path = "../../../hapdev-web/webui-support" }
-
-web-app-package = { path = "../../../hapdev-web/module/app-package" }
-web-config = { path = "../../../hapdev-web/module/config" }
-web-resource = { path = "../../../hapdev-web/module/resource" }
-web-user = { path = "../../../hapdev-web/module/user" }
-web-kms = { path = "../../../hapdev-web/module/kms" }
-web-weixin = { path = "../../../hapdev-web/module/weixin" }

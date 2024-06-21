@@ -42,7 +42,7 @@ export default defineConfig({
     },
 
     server: {
-        port: 8000,
+        port: 8801,
         host: "0.0.0.0",
     },
     plugins: [

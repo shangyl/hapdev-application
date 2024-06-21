@@ -1,41 +1,41 @@
 use crate_config::prelude::ConfigError;
 use hapdev_app::prelude::config::FusionError;
 
-pub type AppResult<T> = Result<T, AppError>;
+pub type AppServerResult<T> = Result<T, AppServerError>;
 
 #[derive(Debug)]
-pub enum AppError {
+pub enum AppServerError {
     Application(FusionError),
     SqlError(sqlx::Error),
     Custom(String),
 }
 
-impl From<sqlx::Error> for AppError {
+impl From<sqlx::Error> for AppServerError {
     fn from(err: sqlx::Error) -> Self {
-        AppError::SqlError(err)
+        AppServerError::SqlError(err)
     }
 }
 
-impl From<FusionError> for AppError {
+impl From<FusionError> for AppServerError {
     fn from(err: FusionError) -> Self {
-        AppError::Application(err)
+        AppServerError::Application(err)
     }
 }
 
-impl From<String> for AppError {
+impl From<String> for AppServerError {
     fn from(err: String) -> Self {
-        AppError::Custom(err)
+        AppServerError::Custom(err)
     }
 }
 
-impl<'a> From<&'a str> for AppError {
+impl<'a> From<&'a str> for AppServerError {
     fn from(err: &'a str) -> Self {
-        AppError::Custom(err.to_string())
+        AppServerError::Custom(err.to_string())
     }
 }
 
-impl From<ConfigError> for AppError {
+impl From<ConfigError> for AppServerError {
     fn from(err: ConfigError) -> Self {
-        AppError::Custom(err.to_string())
+        AppServerError::Custom(err.to_string())
     }
 }

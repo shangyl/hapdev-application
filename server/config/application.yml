@@ -1,0 +1,50 @@
+name: admin-demo
+server:
+  name: web-server
+  services:
+    - name: website-server
+      default: true
+      host: 0.0.0.0
+      port: 8800
+      config:
+        websocket_enable: true
+        jwt_private: 0xa06f853898a9dd4f32441a56879c52878f96c42730ed31c50e00
+        resource: resource
+        template:
+          path: /web/templates
+          static_path: /web/static
+databases:
+  - name: mysql
+    type: mysql
+    is_default: true
+    property:
+      name: { database_name }
+      host: { database_host }
+      user: { database_user }
+      password: { database_password }
+      port: { database_port }
+      time_zone: +8:00
+services:
+  - name: iot_service
+    type: IotService
+    property:
+      master: true
+      auto_config: true
+  - name: cache_service
+    type: CacheService
+    property:
+      cron: 0 1/30 * * * ?
+  - name: mqtt_service
+    type: MqttService
+    enable: false
+    property:
+      host: 172.20.110.22
+      port: 1883
+      client_id: mqtt_iot_system
+      topics:
+        - /+/+/+/+/u
+  - name: modbus_service
+    type: ModbusService
+    enable: false
+  - name: plc_service
+    type: PlcService

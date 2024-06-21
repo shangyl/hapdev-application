@@ -1,0 +1,24 @@
+[workspace]
+members = ["frontend-wasm"]
+
+resolver = "2"
+
+[profile.release]
+lto = true
+opt-level = 's'
+
+[patch.crate-isolovr]
+admin-webui = { path = "../../hapdev-web/admin-webui" }
+webui = { path = "../../hapdev-web/webui" }
+webui-derive = { path = "../../hapdev-web/webui-derive" }
+webui-support = { path = "../../hapdev-web/webui-support" }
+
+app-worker = { path = "../../hapdev-web/workers/app-worker" }
+ui-worker = { path = "../../hapdev-web/workers/ui-worker" }
+
+web-app-package = { path = "../../hapdev-web/module/app-package" }
+web-config = { path = "../../hapdev-web/module/config" }
+web-kms = { path = "../../hapdev-web/module/kms" }
+web-resource = { path = "../../hapdev-web/module/resource" }
+web-user = { path = "../../hapdev-web/module/user" }
+web-weixin = { path = "../../hapdev-web/module/weixin" }

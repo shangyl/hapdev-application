@@ -32,7 +32,7 @@ pub fn run_app() -> Result<(), JsValue> {
 
     let web_api = if cfg!(debug_assertions) {
         wasm_logger::init(wasm_logger::Config::new(log::Level::Debug));
-        let url: Url = "http://localhost:8300/api/v1/admin".parse().unwrap();
+        let url: Url = "http://localhost:8800/api/v1/admin".parse().unwrap();
         WebApi::new(url)
     } else {
         wasm_logger::init(wasm_logger::Config::new(log::Level::Error));

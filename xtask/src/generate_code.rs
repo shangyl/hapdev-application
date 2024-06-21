@@ -4,10 +4,13 @@ use std::{
     process::{Command, Stdio},
 };
 
-use fusion_codegen::prelude::{CodegenFetchApi, FusionCodegen};
 use fusion_codegen::{
     prelude::{builder::prelude::Project, CodegenContext},
     Codegen,
+};
+use fusion_codegen::{
+    prelude::{CodegenFetchApi, FusionCodegen},
+    CodeType,
 };
 
 use crate::{dist_dir, project_root, DynError};
@@ -44,7 +47,7 @@ fn gen_server(project: &Project) -> Result<(), DynError> {
     let _ = fs::remove_dir_all(&dist_dir());
     fs::create_dir_all(&dist_dir())?;
 
-    let generated = match project.generate_server_code() {
+    let generated = match project.implement(&CodeType::ServerCode) {
         Ok(quote) => quote,
         Err(e) => {
             eprintln!("Failed to generate server code: {:?}", e);
@@ -62,7 +65,7 @@ fn gen_server(project: &Project) -> Result<(), DynError> {
 }
 
 fn gen_web(project: &Project) -> Result<(), DynError> {
-    let generated = match project.generate_web_code() {
+    let generated = match project.implement(&CodeType::WebCode) {
         Ok(quote) => quote,
         Err(e) => {
             eprintln!("Failed to generate web code: {:?}", e);
