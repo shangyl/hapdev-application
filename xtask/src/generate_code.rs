@@ -4,6 +4,7 @@ use std::{
     process::{Command, Stdio},
 };
 
+use fusion_codegen::ProjectCodegen;
 use fusion_codegen::{
     prelude::{builder::prelude::Project, CodegenContext},
     Codegen,
@@ -35,7 +36,7 @@ pub async fn gen() -> Result<(), DynError> {
         }
     };
 
-    log::info!("Project: {:?}", project);
+    log::info!("Project: {:#?}", project);
 
     gen_server(&project)?;
     gen_web(&project)?;
